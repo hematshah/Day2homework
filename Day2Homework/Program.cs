@@ -10,6 +10,7 @@ namespace Day2Homework
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
