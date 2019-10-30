@@ -6,8 +6,30 @@ using System.Threading.Tasks;
 
 namespace Day2Homework
 {
-    class Chef
+     class Chef : Cooking
     {
+        int num;
+        private int _howManyChefs = 3;
+        public Chef()
+        {
+        }
+
+        public int HowManyChefs
+        {
+            get => _howManyChefs;
+            set
+            {
+                if (num < _howManyChefs)
+                {
+                    _howManyChefs = num;
+                } 
+                else if(num >_howManyChefs) 
+                {
+                    num = _howManyChefs;
+                }
+
+            }
+        }
 
     }
     class Cooking : Cookware
@@ -23,17 +45,58 @@ namespace Day2Homework
         public string FryingPan;
         public string Wok;
     }
+
+
+
     class Meat
     {
+        private double animalFlesh;
+        private double fats;
+        private  double leanMeats;
 
-        private String AnimalFlesh;
+        public Meat()
+        {
+        }
 
-    }
+        public Meat(double x, double y) 
+        {
+            fats = x;
+            leanMeats = y;
+        }
+        public double GetanimalFlesh() 
+        {
+            return animalFlesh;
+        }
+        public void SetanimalFlesh(double fat, double leanMeat) 
+        {
+            animalFlesh =   (fat / leanMeat) * 100;
+        }
+
+        public double MeatRatio() {
+
+            double meatRatio = (fats / leanMeats) * 100;
+            return meatRatio;
+
+        }
+
+        public virtual void PrintMeatText()
+        {
+
+            Console.WriteLine("This is you butcher speaking --> we have different meat to fat ratios. ");
+          
+        }
+
+         }
     class MeatType : Meat
     {
         private string Redmeat;
         private string Poultry;
         private string Pork;
+
+        public override void PrintMeatText() 
+        {
+            Console.WriteLine("We have diffrent types of meat available for veriety of meat dishes. ");
+        }
     }
     class MeatVariations : MeatType
     {
@@ -43,12 +106,25 @@ namespace Day2Homework
         public string goat;
         public string eggs;
         public string fish;
+
+
     }
     class MeatDish : MeatVariations
     {
         private string Curry;
-        public bool eaten;
+        private bool eaten;
+
+        public override void PrintMeatText()
+        {
+            Console.WriteLine(" Our signature dish is curry !"); 
+        }
     }
+
+
+
+
+
+
     class Vegetables
     {
         private string Brocoli;
