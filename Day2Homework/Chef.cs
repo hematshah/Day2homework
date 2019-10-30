@@ -9,23 +9,37 @@ namespace Day2Homework
      class Chef : Cooking
     {
         int num;
-        private int _howManyChefs = 3;
+        private int howManyChefs = 3; 
+
+        // default constuctor for chef class
         public Chef()
         {
         }
 
+        public Chef(int numberValue)
+        {
+            num = numberValue;
+        }
+
+        public Chef(int numberValue, int numberOfChefs)
+        {
+            num = numberValue;
+            howManyChefs = numberOfChefs;
+
+        }
+
         public int HowManyChefs
         {
-            get => _howManyChefs;
+            get => howManyChefs;
             set
             {
-                if (num < _howManyChefs)
+                if (num < howManyChefs)
                 {
-                    _howManyChefs = num;
+                    howManyChefs = num;
                 } 
-                else if(num >_howManyChefs) 
+                else if(num >howManyChefs) 
                 {
-                    num = _howManyChefs;
+                    num = howManyChefs;
                 }
 
             }
@@ -45,6 +59,8 @@ namespace Day2Homework
         public string FryingPan;
         public string Wok;
     }
+
+
 
 
 

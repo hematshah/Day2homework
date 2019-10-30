@@ -11,6 +11,8 @@ namespace Day2Homework
         static void Main(string[] args)
         {
             Chef chef = new Chef();
+            Chef chef1 = new Chef(2);
+            Chef chef2 = new Chef(4, 1);
             int cheftype = chef.HowManyChefs; // not able to have parameters
             Console.WriteLine(cheftype);
 
