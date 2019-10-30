@@ -11,7 +11,7 @@ namespace Day2Homework
         int num;
         private int howManyChefs = 3; 
 
-        // default constuctor for chef class
+        // default constuctor for chef class to test
         public Chef()
         {
         }
